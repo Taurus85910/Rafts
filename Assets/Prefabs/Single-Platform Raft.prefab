@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5130815191070799665}
+  - component: {fileID: 2416778991420493757}
   m_Layer: 0
   m_Name: Single-Platform Raft
   m_TagString: Untagged
@@ -31,23 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3636455898643608904
+--- !u!114 &2416778991420493757
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5256822232667098970}
+  m_GameObject: {fileID: 471324846258399728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 636157162c57a9a46b27a567e8bd0b51, type: 3}
+  m_Script: {fileID: 11500000, guid: 01cc25a2f4b3ed6468839e8aa3cbdeb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dwellers:
-  - {fileID: 1860888468438928830}
-  _rafts:
-  - {fileID: 5256822232667098971}
-  _newMaterial: {fileID: 2100000, guid: 57dd2f5c01d0adc4c80702a712d2683f, type: 2}
+  _gridSize: 3
 --- !u!1001 &8025272101234438453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106,42 +103,15 @@ PrefabInstance:
     - target: {fileID: 2858806703348121198, guid: a408d0708960325438437ab650eafe1a, type: 3}
       propertyPath: _enemyRaft
       value: 
-      objectReference: {fileID: 3636455898643608904}
+      objectReference: {fileID: 0}
     - target: {fileID: 2858806703348121199, guid: a408d0708960325438437ab650eafe1a, type: 3}
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a408d0708960325438437ab650eafe1a, type: 3}
---- !u!1 &5256822232667098970 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2858806703348121199, guid: a408d0708960325438437ab650eafe1a, type: 3}
-  m_PrefabInstance: {fileID: 8025272101234438453}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5256822232667097255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2858806703348119954, guid: a408d0708960325438437ab650eafe1a, type: 3}
   m_PrefabInstance: {fileID: 8025272101234438453}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5256822232667098971 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2858806703348121198, guid: a408d0708960325438437ab650eafe1a, type: 3}
-  m_PrefabInstance: {fileID: 8025272101234438453}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5256822232667098970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ced277ba93fde649a0913223bba0f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1860888468438928830 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8542284262219594891, guid: a408d0708960325438437ab650eafe1a, type: 3}
-  m_PrefabInstance: {fileID: 8025272101234438453}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2011a8bd7609afb4f841f08ee61c595c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -4917,8 +4917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ced277ba93fde649a0913223bba0f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gridSize: 3
-  _enemyRaft: {fileID: 0}
+  _material: {fileID: 2100000, guid: 57dd2f5c01d0adc4c80702a712d2683f, type: 2}
 --- !u!1001 &3346664912464100746
 PrefabInstance:
   m_ObjectHideFlags: 0

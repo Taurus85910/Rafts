@@ -1,60 +1,81 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(SkinnedMeshRenderer))]
 public class Dweller : MonoBehaviour
 {
-   [SerializeField] private int _maxHealth;
-   [SerializeField] private int _damage;
-   [SerializeField] private Animator _animator;
-   
-   private SkinnedMeshRenderer _skinnedMeshRenderer;
-   private int _currentHealth;
-   private bool _isDead;
+    [SerializeField] private int _maxHealth;
+    [SerializeField] private int _damage;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private Material _material;
+    [SerializeField] private DwellerBody _dwellerBody;
 
-   public SkinnedMeshRenderer SkinnedMeshRenderer => _skinnedMeshRenderer;
+    private Weapon _weapon;
+    private SkinnedMeshRenderer _skinnedMeshRenderer;
+    private int _currentHealth;
+    private bool _isAlive = true;
 
-   public bool IsDead => _isDead;
-   public int Damage => _damage;
+    public bool IsAlive => _isAlive;
 
-   public event Action Die;
+    public DwellerBody DwellerBody => _dwellerBody;
 
-   private void Start()
-   {
-      _skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
-      _animator.SetBool("IsFighting",false);
-   }
+    private void Start()
+    {
+        _skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
+        _weapon = GetComponentInChildren<Weapon>();
+        PutWeaponAway();
+        _currentHealth = _maxHealth;
+    }
 
-   public void ApplyDamage(int damage)
-   {
-      _currentHealth -= damage;
+    public void AppleDamage(int damage)
+    {
+        _currentHealth -= damage;
+        if (_currentHealth <= 0)
+        {
+            _isAlive = false;
+            _skinnedMeshRenderer.enabled = false;
+            PutWeaponAway();
+        }
+    }
 
-      if (_currentHealth <= 0)
-      {
-         Die?.Invoke();
-         _isDead = true;
-         _skinnedMeshRenderer.enabled = false;
-      }
-   }
+    public void BeginShooting()
+    {
+        _animator.SetBool("IsFighting",true);
+    }
 
-   public void ResetDweller()
-   {        
-      _skinnedMeshRenderer.enabled = true;
-      _currentHealth = _maxHealth;
-      _isDead = false;
-   }
+    public void EndShooting()
+    {
+        _animator.SetBool("IsFighting",false);
+    }
 
-   public void EnterBattle()
-   {
-      _animator.SetBool("IsFighting", true);
-   }
+    public void ChangeColor()
+    {
+        _skinnedMeshRenderer.enabled = true;
+        _skinnedMeshRenderer.material = _material;
+    }
 
-   public void ExitBattle()
-   {
-      _animator.SetBool("IsFighting",false);
-   }
-   
+    public void RestoreHealth()
+    {
+        _currentHealth = _maxHealth;
+        _isAlive = true;
+    }
+
+    public void GetWeapon()
+    {
+        _weapon.gameObject.SetActive(true);
+    }
+
+    public void PutWeaponAway()
+    {
+        _weapon.gameObject.SetActive(false);
+    }
+
+    public int Shoot(Transform target)
+    {
+        _weapon.TakeShot(target);
+        return _damage;
+    }
+    
 }

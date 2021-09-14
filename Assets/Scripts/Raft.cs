@@ -3,24 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(MeshRenderer))]
 public class Raft : MonoBehaviour
 {
-    [SerializeField] private int _gridSize;
-    [SerializeField] private EnemyRaft _enemyRaft;
+    [SerializeField] private Material _material;
 
-    private bool _canCapture = false;
+    private bool _isCapture = false;
+    private MeshRenderer _meshRenderer;
 
-    public EnemyRaft EnemyRaft => _enemyRaft;
-    public bool CanCapture => _canCapture;
-
-    public void SetCaptureAvailable()
-    {
-         _canCapture = true;
-    }
+    public bool IsCapture => _isCapture;
 
     private void Start()
     {
-        transform.position = new Vector3(Mathf.RoundToInt(transform.position.x / _gridSize) * _gridSize, 0 , 
-            Mathf.RoundToInt(transform.position.z / _gridSize) * _gridSize );
+        _meshRenderer = GetComponent<MeshRenderer>();
+    }
+
+    public void ChangeColor()
+    {
+        _meshRenderer.material = _material;
+    }
+
+    public void Capture()
+    {
+        _isCapture = true;
     }
 }

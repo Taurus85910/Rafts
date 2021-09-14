@@ -1,42 +1,37 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using DG.Tweening;
 
-
 [RequireComponent(typeof(BoxCollider))]
-[RequireComponent(typeof(Rigidbody))]
 public class RaftConnector : MonoBehaviour
 {
     [SerializeField] private int _gridSize;
-    [SerializeField] private int _connectionTime;
+    [SerializeField] private float _connectDuration;
 
-    private Raft _currentRaftConnection;
-    
-    
-        
-    public event Action<EnemyRaft> RaftsConnected;
+    private Vector3 _targetPosition;
+    private BoxCollider _boxCollider;
+
+    public event Action<MainRaft> RaftConnected;
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent(out Raft raft))
+        if (other.gameObject.TryGetComponent(out Raft raft) && !raft.IsCapture)
         {
-            Vector3 targetPosition = new Vector3(Mathf.RoundToInt(transform.position.x / _gridSize) * _gridSize, 0,
+            MainRaft mainRaft = raft.GetComponentInParent<MainRaft>();
+            _targetPosition = new Vector3(Mathf.RoundToInt(transform.position.x / _gridSize) * _gridSize, 0,
                 Mathf.RoundToInt(transform.position.z / _gridSize) * _gridSize);
 
-            transform.DOMove(targetPosition, _connectionTime);
-            RaftsConnected?.Invoke(raft.EnemyRaft);
-            print("connect");
-            
-            if (raft.CanCapture)
-            {
-                transform.position = targetPosition;
-                print("capture");
-                other.gameObject.transform.parent = transform;
-            }
+            transform.DOMove(_targetPosition, _connectDuration);
+            RaftConnected?.Invoke(mainRaft);
         }
     }
     
-    
+    public void Connecting(MainRaft mainRaft)
+    {
+        transform.position = _targetPosition;
+        mainRaft.GetRafts.ForEach(raft => raft.gameObject.transform.parent = transform);
+    }
 }
