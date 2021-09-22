@@ -11,7 +11,7 @@ public class Dweller : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Material _material;
     [SerializeField] private DwellerBody _dwellerBody;
-
+    
     private Weapon _weapon;
     private SkinnedMeshRenderer _skinnedMeshRenderer;
     private int _currentHealth;
