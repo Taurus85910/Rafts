@@ -5,15 +5,13 @@ using UnityEngine;
 
 public class LevelDisplay : Display
 {
-    [SerializeField] private LevelLoader _levelLoader;
-
     private void OnEnable()
     {
-        _levelLoader.LevelLoaded += OnValueLoaded;
+        _levelLoader.LevelChanged += OnValueChanged;
     }
     
     private void OnDisable()
     {
-        _levelLoader.LevelLoaded += OnValueLoaded;
+        _levelLoader.LevelChanged += OnValueChanged;
     }
 }

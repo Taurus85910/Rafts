@@ -10,7 +10,10 @@ public class MainGrid : MonoBehaviour
     
     private List<Grid> _grids;
     private int _currentFoundRaftsCount = 0;
-    
+
+    public int CurrentFoundRaftsCount => _currentFoundRaftsCount;
+    public int GridsCount => _grids.Count;
+
     private void OnEnable()
     {
         _grids.ForEach(grid => grid.RaftFound += OnRaftFound);

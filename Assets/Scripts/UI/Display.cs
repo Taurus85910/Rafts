@@ -6,15 +6,17 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
 public abstract class Display : MonoBehaviour
-{
+{ 
+    [SerializeField] protected LevelLoader _levelLoader;
+    
     private Text _text;
 
-    private void Start()
+    private void Awake()
     {
         _text = GetComponent<Text>();
     }
 
-    protected void OnValueLoaded(int value)
+    protected void OnValueChanged(int value)
     {
         _text.text = value.ToString();
     }

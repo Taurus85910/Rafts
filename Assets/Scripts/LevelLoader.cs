@@ -20,9 +20,11 @@ public class LevelLoader : MonoBehaviour
     private GameObject _currentLevel;
     private GameObject _currentPlayerPrefab;
     private MainGrid _mainGrid;
+    private int _reward;
     
-    public event Action<int> LevelLoaded;
-    public event Action<int> LevelClosed;
+    public event Action<int> LevelChanged;
+    public event Action<int> MoneyChanged;
+    public event Action<int> RewardChanged;
     
     private void Start()
     {
@@ -32,13 +34,16 @@ public class LevelLoader : MonoBehaviour
     private void OpenEndLevelUI()
     {
         _endLevelUI.SetActive(true);
+        _reward = (int)(_levels[_saveData.Level].Reward / 2 + _levels[_saveData.Level].Reward / 2 * 
+            (Convert.ToDecimal(_mainGrid.CurrentFoundRaftsCount) / _mainGrid.GridsCount));
+        RewardChanged?.Invoke(_reward);
     }
 
     public void CloseLevel()
     {
         _currentLevel.GetComponent<Level>().LevelCompleted -= OpenEndLevelUI;
         _endLevelUI.SetActive(false);
-        _saveData.Money += _levels[_saveData.Level].Reward;
+        _saveData.Money += _reward;
         _saveData.Level++;
         _saver.Save(_saveData);
         Destroy(_currentLevel);
@@ -63,8 +68,8 @@ public class LevelLoader : MonoBehaviour
         _endLevelUI.SetActive(false);
         _shopButton.SetActive(true);
         _saveData = _saver.Load();
-        LevelClosed?.Invoke(_saveData.Money);
-        LevelLoaded?.Invoke(_saveData.Level+1);
+        MoneyChanged?.Invoke(_saveData.Money);
+        LevelChanged?.Invoke(_saveData.Level+1);
         _currentLevel = Instantiate(_levels[_saveData.Level].gameObject);
         _currentLevel.SetActive(true);
         _currentLevel.GetComponent<Level>().LevelCompleted += OpenEndLevelUI;

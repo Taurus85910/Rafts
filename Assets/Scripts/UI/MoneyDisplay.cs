@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class MoneyDisplay : Display
 {
-    [SerializeField] private LevelLoader _levelLoader;
-
     private void OnEnable()
     {
-        _levelLoader.LevelClosed += OnValueLoaded;
+        _levelLoader.MoneyChanged += OnValueChanged;
     }
     
     private void OnDisable()
     {
-        _levelLoader.LevelClosed += OnValueLoaded;
+        _levelLoader.MoneyChanged += OnValueChanged;
     }
 }
