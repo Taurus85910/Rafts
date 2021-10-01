@@ -28,6 +28,7 @@ public class LevelLoader : MonoBehaviour
     
     private void Start()
     {
+        _saver.Save(_saveData);
         LoadLevel();
     }
 
