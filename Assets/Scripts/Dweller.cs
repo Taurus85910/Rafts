@@ -11,11 +11,14 @@ public class Dweller : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Material _material;
     [SerializeField] private DwellerBody _dwellerBody;
+    [SerializeField] private float _flashDuration;
     
     private Weapon _weapon;
     private SkinnedMeshRenderer _skinnedMeshRenderer;
     private int _currentHealth;
     private bool _isAlive = true;
+    private Coroutine _routine;
+    private Color _originalColor;
 
     public bool IsAlive => _isAlive;
 
@@ -26,18 +29,21 @@ public class Dweller : MonoBehaviour
         _skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
         _weapon = GetComponentInChildren<Weapon>();
         PutWeaponAway();
+        _originalColor = _skinnedMeshRenderer.material.color;
+        _routine = StartCoroutine(Flash());
         _currentHealth = _maxHealth;
     }
 
     public void AppleDamage(int damage)
     {
         _currentHealth -= damage;
+        StopCoroutine(_routine);
+        _routine = StartCoroutine(Flash());
         if (_currentHealth <= 0)
         {
-            _isAlive = false;
-            _skinnedMeshRenderer.enabled = false;
-            PutWeaponAway();
+            Die();
         }
+        
     }
 
     public void BeginShooting()
@@ -54,6 +60,7 @@ public class Dweller : MonoBehaviour
     {
         _skinnedMeshRenderer.enabled = true;
         _skinnedMeshRenderer.material = _material;
+        _originalColor = _skinnedMeshRenderer.material.color;
     }
 
     public void RestoreHealth()
@@ -76,6 +83,20 @@ public class Dweller : MonoBehaviour
     {
         _weapon.TakeShot(target);
         return _damage;
+    }
+
+    private void Die()
+    {
+        _isAlive = false;
+        _skinnedMeshRenderer.enabled = false;
+        PutWeaponAway();
+    }
+    
+    private IEnumerator Flash()
+    {
+        _skinnedMeshRenderer.material.color = Color.white;
+        yield return new WaitForSeconds(_flashDuration);
+        _skinnedMeshRenderer.material.color = _originalColor;
     }
     
 }

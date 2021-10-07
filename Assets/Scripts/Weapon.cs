@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] private Transform _shootPoint; 
     [SerializeField] private List<Bullet> _bulletPull;
+    [SerializeField] private ParticleSystem _shootEffect;
 
     private void Start()
     {
@@ -18,10 +19,13 @@ public class Weapon : MonoBehaviour
 
     public void TakeShot(Transform target)
     {
-          foreach (var bullet in _bulletPull)
+        _shootEffect.Stop();
+        _shootEffect.Play();
+        foreach (var bullet in _bulletPull)
           {
             if (bullet.gameObject.activeSelf == false)
             {
+                
                 bullet.gameObject.transform.position = _shootPoint.position;
                 bullet.gameObject.SetActive(true);
                 bullet.MoveToTarget(target);
