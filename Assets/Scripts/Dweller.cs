@@ -24,13 +24,18 @@ public class Dweller : MonoBehaviour
 
     public DwellerBody DwellerBody => _dwellerBody;
 
+    private void Awake()
+    {
+       
+    }
+
     private void Start()
     {
         _skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
         _weapon = GetComponentInChildren<Weapon>();
         PutWeaponAway();
         _originalColor = _skinnedMeshRenderer.material.color;
-        _routine = StartCoroutine(Flash());
+        _routine = StartCoroutine(Flash(_originalColor));
         _currentHealth = _maxHealth;
     }
 
@@ -38,7 +43,7 @@ public class Dweller : MonoBehaviour
     {
         _currentHealth -= damage;
         StopCoroutine(_routine);
-        _routine = StartCoroutine(Flash());
+        _routine = StartCoroutine(Flash(Color.white));
         if (_currentHealth <= 0)
         {
             Die();
@@ -92,9 +97,9 @@ public class Dweller : MonoBehaviour
         PutWeaponAway();
     }
     
-    private IEnumerator Flash()
+    private IEnumerator Flash(Color color)
     {
-        _skinnedMeshRenderer.material.color = Color.white;
+        _skinnedMeshRenderer.material.color = color;
         yield return new WaitForSeconds(_flashDuration);
         _skinnedMeshRenderer.material.color = _originalColor;
     }
