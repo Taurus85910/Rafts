@@ -16,19 +16,10 @@ public class Grid : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent(out Raft raft))
+        if (other.gameObject.TryGetComponent(out Raft raft) && raft.IsCapture)
         {
-            _gridSprite.enabled = false;
-            if (raft.IsCapture)
-            {
-                RaftFound?.Invoke();
-                gameObject.SetActive(false);
-            }
+            RaftFound?.Invoke();
+            gameObject.SetActive(false);
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        _gridSprite.enabled = true;
     }
 }
