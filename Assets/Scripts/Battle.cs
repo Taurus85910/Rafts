@@ -11,9 +11,9 @@ public class Battle : MonoBehaviour
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private CameraZoomer _cameraZoomer;
     [SerializeField] private GameObject _restartPanel;
-    
-    private PlayerRaft _playerRaft;
 
+    private PlayerRaft _playerRaft;
+    
     private void Start()
     {
         _playerRaft = GetComponent<PlayerRaft>();
@@ -43,13 +43,15 @@ public class Battle : MonoBehaviour
         _playerMovement.enabled = false;
         _cameraZoomer.Zoom();
         mainRaft.CaptureRafts();
+        yield return new WaitForSeconds(_turnDuration);
         while (_playerRaft.IsDwellersAlive() && mainRaft.IsDwellersAlive())
         {
+           
             Attack(_playerRaft.GetDwellers, mainRaft.GetDwellers);
             Attack(mainRaft.GetDwellers, _playerRaft.GetDwellers);
             yield return new WaitForSeconds(_turnDuration);
         }
-
+        
         if (_playerRaft.IsDwellersAlive())
         {
             mainRaft.ChangeDwellersColor();

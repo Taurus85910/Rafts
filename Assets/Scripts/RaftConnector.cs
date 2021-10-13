@@ -13,6 +13,7 @@ public class RaftConnector : MonoBehaviour
 
     private Vector3 _targetPosition;
     private BoxCollider _boxCollider;
+    private Coroutine _routine;
 
     public event Action<MainRaft> RaftConnected;
     
@@ -26,11 +27,20 @@ public class RaftConnector : MonoBehaviour
 
             transform.DOMove(_targetPosition, _connectDuration);
             RaftConnected?.Invoke(mainRaft);
+
+           // _routine = StartCoroutine(StartBattle(mainRaft));
         }
+    }
+    
+    private IEnumerator StartBattle(MainRaft mainRaft)
+    {
+        yield return new WaitForSeconds(_connectDuration);
+        
     }
     
     public void Connecting(MainRaft mainRaft)
     {
+        //StopCoroutine(_routine);
         transform.position = _targetPosition;
         mainRaft.GetRafts.ForEach(raft => raft.gameObject.transform.parent = transform);
     }

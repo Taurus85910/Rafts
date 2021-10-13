@@ -843,7 +843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb6befda789c3c4c8eb67f782b86d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 12
   _impactSystem: {fileID: 8571834481037038119}
   _targetYPosition: 2
   _impactDirection: {fileID: 6879051875901957959}
@@ -1001,7 +1001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb6befda789c3c4c8eb67f782b86d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 12
   _impactSystem: {fileID: 8571834481037038119}
   _targetYPosition: 2
   _impactDirection: {fileID: 6879051875901957959}
@@ -2023,6 +2023,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1172543070557092, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525638851938226, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1879272669879180, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
       propertyPath: m_Name
       value: Bullet_GoldFire_Small_Impact_Template
@@ -2087,8 +2095,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198183221796487404, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 198183221796487404, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198183221796487404, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
+      propertyPath: InitialModule.startSpeed.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 198344661946723368, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
       propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198344661946723368, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
+      propertyPath: prewarm
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198344661946723368, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
@@ -2096,8 +2120,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198344661946723368, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198344661946723368, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198344661946723368, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198344661946723368, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198344661946723368, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
+      propertyPath: startDelay.maxCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198344661946723368, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
+      propertyPath: startDelay.maxCurve.m_Curve.Array.data[1].value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 199012140504858130, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
       propertyPath: m_Materials.Array.size

@@ -5,13 +5,12 @@ using System.Linq;
 using UnityEngine;
 
 public class PlayerRaft : MainRaft
-{
+{ 
    protected override void Start()
    {
       base.Start();
       UpdateRaftCompound();
    }
-
    public void UpdateRaftCompound()
    {
       Rafts = AddNewElements<Raft>();

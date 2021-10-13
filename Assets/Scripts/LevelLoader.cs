@@ -25,7 +25,13 @@ public class LevelLoader : MonoBehaviour
     public event Action<int> LevelChanged;
     public event Action<int> MoneyChanged;
     public event Action<int> RewardChanged;
-    
+
+    private void Awake()
+    {
+        _levels.ForEach(level => level.gameObject.SetActive(false));
+        _playerPrefab.SetActive(false);
+    }
+
     private void Start()
     {
         _saver.Save(_saveData);
@@ -82,6 +88,7 @@ public class LevelLoader : MonoBehaviour
         _mainGrid.ResetFoundRaftsCount();
         _currentPlayerPrefab.GetComponentsInChildren<MainGrid>().ToList().ForEach(grid => grid.gameObject.SetActive(false));
         _mainGrid.gameObject.SetActive(true);
+        
        
     }
 }

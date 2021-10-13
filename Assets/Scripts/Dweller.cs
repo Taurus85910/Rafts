@@ -23,12 +23,7 @@ public class Dweller : MonoBehaviour
     public bool IsAlive => _isAlive;
 
     public DwellerBody DwellerBody => _dwellerBody;
-
-    private void Awake()
-    {
-       
-    }
-
+    
     private void Start()
     {
         _skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();

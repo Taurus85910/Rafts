@@ -3294,6 +3294,8 @@ MonoBehaviour:
   - {fileID: 1750067922}
   - {fileID: 2030906808}
   - {fileID: 1805168536}
+  - {fileID: 906195680}
+  - {fileID: 1363884171}
   _reward: 50
 --- !u!4 &655967196
 Transform:
@@ -4619,6 +4621,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894843295}
   m_CullTransparentMesh: 1
+--- !u!114 &906195680 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3450388475653690114, guid: 08a03087e5d5fd6438bbe4b0512f3b24, type: 3}
+  m_PrefabInstance: {fileID: 1543309119}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cc25a2f4b3ed6468839e8aa3cbdeb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &906441861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5967,7 +5980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1159933110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7012,6 +7025,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5342316097211402853, guid: d54a5ee76e8f5404d945b2e4e4f8f358, type: 3}
   m_PrefabInstance: {fileID: 635164855}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1363884171 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7518048430229720740, guid: 9d8fe2b13da366c47963ce7f4ab17b05, type: 3}
+  m_PrefabInstance: {fileID: 273649774}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cc25a2f4b3ed6468839e8aa3cbdeb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1381169990
 GameObject:
   m_ObjectHideFlags: 0
@@ -11396,7 +11420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7376014400210090709, guid: f347af55613a261449b2d33915382453, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7376014400210090710, guid: f347af55613a261449b2d33915382453, type: 3}
       propertyPath: m_RootOrder

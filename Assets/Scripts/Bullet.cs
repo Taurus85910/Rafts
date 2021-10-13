@@ -34,9 +34,9 @@ public class Bullet : MonoBehaviour
     private void DisableBullet()
     {
         _impactSystem.gameObject.transform.position = transform.position;
+        _impactSystem.gameObject.transform.TransformVector(_impactDirection.position.normalized * 3);
         _impactSystem.gameObject.transform.rotation = _impactDirection.rotation;
-       // _impactSystem.gameObject.transform.Rotate(0, 180, 0);
-        //_impactSystem.gameObject.transform.rotation = Quaternion.Euler(0,180,0);
+        
         _impactSystem.Stop();
         _impactSystem.Play();
         gameObject.SetActive(false);

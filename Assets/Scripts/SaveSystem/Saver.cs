@@ -5,7 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Saver : MonoBehaviour
+public class Saver
 { 
     private const string LEVEL_KEY = "m_level";
     private const string MONEY_KEY = "m_money";
