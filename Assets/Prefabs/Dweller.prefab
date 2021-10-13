@@ -846,6 +846,7 @@ MonoBehaviour:
   _speed: 10
   _impactSystem: {fileID: 8571834481037038119}
   _targetYPosition: 2
+  _impactDirection: {fileID: 6879051875901957959}
 --- !u!1 &6069899671334993405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,6 +1004,7 @@ MonoBehaviour:
   _speed: 10
   _impactSystem: {fileID: 8571834481037038119}
   _targetYPosition: 2
+  _impactDirection: {fileID: 6879051875901957959}
 --- !u!1 &6549032366180582122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,7 +1500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010921236120, guid: 01e91ba42e028824b86d47ee5f416589, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4000010921236120, guid: 01e91ba42e028824b86d47ee5f416589, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1723,7 +1725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836675779974994, guid: edc555170136714468e06ae43a7e0c86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.275
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4836675779974994, guid: edc555170136714468e06ae43a7e0c86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1821,7 +1823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836675779974994, guid: edc555170136714468e06ae43a7e0c86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.275
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4836675779974994, guid: edc555170136714468e06ae43a7e0c86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2017,6 +2019,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7861633314591875975}
     m_Modifications:
+    - target: {fileID: 1127226951305888, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1879272669879180, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
       propertyPath: m_Name
       value: Bullet_GoldFire_Small_Impact_Template
@@ -2047,7 +2053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4541196389373984, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0551
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4541196389373984, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
       propertyPath: m_LocalPosition.z

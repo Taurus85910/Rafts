@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private ParticleSystem _impactSystem;
     [SerializeField] private float _targetYPosition;
+    [SerializeField] private Transform _impactDirection;
 
     private float _flyTime;
     private float _elapsedTime;
@@ -33,7 +34,9 @@ public class Bullet : MonoBehaviour
     private void DisableBullet()
     {
         _impactSystem.gameObject.transform.position = transform.position;
-        _impactSystem.gameObject.transform.LookAt(_startPosition);
+        _impactSystem.gameObject.transform.rotation = _impactDirection.rotation;
+       // _impactSystem.gameObject.transform.Rotate(0, 180, 0);
+        //_impactSystem.gameObject.transform.rotation = Quaternion.Euler(0,180,0);
         _impactSystem.Stop();
         _impactSystem.Play();
         gameObject.SetActive(false);
