@@ -12,6 +12,7 @@ public class GridPoint : MonoBehaviour
     private void Awake()
     {
         _image = GetComponent<Image>();
+        _image.color = Color.gray;
     }
 
     public void FillPointIcon()

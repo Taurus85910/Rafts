@@ -13,8 +13,7 @@ public class Bullet : MonoBehaviour
 
     private float _flyTime;
     private float _elapsedTime;
-    private Transform _startPosition;
-    
+
     private void Update()
     {
         _elapsedTime += Time.deltaTime;
@@ -25,16 +24,11 @@ public class Bullet : MonoBehaviour
             DisableBullet();
         }
     }
-
-    private void OnEnable()
-    {
-        _startPosition = transform;
-    }
-
+    
     private void DisableBullet()
     {
         _impactSystem.gameObject.transform.position = transform.position;
-        _impactSystem.gameObject.transform.TransformVector(_impactDirection.position.normalized * 3);
+        _impactSystem.gameObject.transform.TransformVector(_impactDirection.position.normalized);
         _impactSystem.gameObject.transform.rotation = _impactDirection.rotation;
         
         _impactSystem.Stop();
@@ -44,8 +38,9 @@ public class Bullet : MonoBehaviour
 
     public void MoveToTarget(Transform target)
     {
-        _flyTime = (target.position - transform.position).magnitude / _speed;
-        transform.DOMove(new Vector3(target.position.x, _targetYPosition , target.position.z), _flyTime);
+        _flyTime = ((target.position - transform.position).magnitude + (target.position - transform.position).normalized.magnitude) / _speed;
+        transform.DOMove(new Vector3(target.position.x + (target.position - transform.position).normalized.x
+            , _targetYPosition , target.position.z + (target.position - transform.position).normalized.z), _flyTime);
     }
 
     

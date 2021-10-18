@@ -12,13 +12,16 @@ public class Dweller : MonoBehaviour
     [SerializeField] private Material _material;
     [SerializeField] private DwellerBody _dwellerBody;
     [SerializeField] private float _flashDuration;
-    
+    [SerializeField] private GameObject _ragDall;
+    [SerializeField] private SkinnedMeshRenderer _ragDallRenderer;
+
     private Weapon _weapon;
     private SkinnedMeshRenderer _skinnedMeshRenderer;
     private int _currentHealth;
     private bool _isAlive = true;
     private Coroutine _routine;
     private Color _originalColor;
+    private Transform _ragDallContainer;
 
     public bool IsAlive => _isAlive;
 
@@ -26,6 +29,7 @@ public class Dweller : MonoBehaviour
     
     private void Start()
     {
+        _ragDallContainer = FindObjectOfType<RegDallContainer>().gameObject.transform;
         _skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
         _weapon = GetComponentInChildren<Weapon>();
         PutWeaponAway();
@@ -43,7 +47,6 @@ public class Dweller : MonoBehaviour
         {
             Die();
         }
-        
     }
 
     public void BeginShooting()
@@ -60,6 +63,7 @@ public class Dweller : MonoBehaviour
     {
         _skinnedMeshRenderer.enabled = true;
         _skinnedMeshRenderer.material = _material;
+        _ragDallRenderer.material = _material;
         _originalColor = _skinnedMeshRenderer.material.color;
     }
 
@@ -90,6 +94,8 @@ public class Dweller : MonoBehaviour
         _isAlive = false;
         _skinnedMeshRenderer.enabled = false;
         PutWeaponAway();
+        GameObject ragDall = Instantiate(_ragDall, _ragDall.transform.position, Quaternion.identity,_ragDallContainer);
+        ragDall.SetActive(true);
     }
     
     private IEnumerator Flash(Color color)

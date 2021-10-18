@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.1/release' branch; Version is '2021.1.0f1 (61a549675243) revision 6399305'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home Single Language; OS build 19043.1237; Version 2009; 64bit' Language: 'ru' Physical Memory: 15741 MB
+OS: 'Windows 10 Home Single Language; OS build 19043.1288; Version 2009; 64bit' Language: 'ru' Physical Memory: 15741 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -15,11 +15,11 @@ D:/Repos/Rafts
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57872
+57789
 Successfully changed project path to: D:/Repos/Rafts
 D:/Repos/Rafts
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 118.95 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 135.71 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.0f1 (61a549675243)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/Resources/UnitySubsystems
@@ -35,122 +35,218 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56244
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56776
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002966 seconds.
+Registered in 0.002702 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 136.05 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 133.52 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.544 seconds
+- Completed reload, in  2.681 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005903 seconds.
+Registered in 0.005326 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.32 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.71 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.603 seconds
+- Completed reload, in  1.532 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
-Refreshing native plugins compatible for Editor in 2.02 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 1.59 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2849 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.8 MB.
-System memory in use after: 212.1 MB.
+Unloading 2868 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139.3 MB.
+System memory in use after: 137.7 MB.
 
-Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 3306.
-Total: 6.905800 ms (FindLiveObjects: 0.760900 ms CreateObjectMapping: 0.215700 ms MarkObjects: 3.634800 ms  DeleteObjects: 2.291400 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3322.
+Total: 5.477500 ms (FindLiveObjects: 0.783200 ms CreateObjectMapping: 0.287400 ms MarkObjects: 3.634400 ms  DeleteObjects: 0.768000 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Images/Cool_Game_Buttons.png
-  artifactKey: Guid(1ee100dbe639f414cbc94974a89f6a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Cool_Game_Buttons.png using Guid(1ee100dbe639f414cbc94974a89f6a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '377935f86b7ba720c902e8dc9809b7d5') in 0.278335 seconds 
+  path: Assets/GUI Kit Casual Game/Scenes/DemoScene.unity
+  artifactKey: Guid(78addc77d730f4f38a4a7d5e73530376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Scenes/DemoScene.unity using Guid(78addc77d730f4f38a4a7d5e73530376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efe87da4e5f4841e68438cc8e65fe476') in 0.074017 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000978 seconds.
-  path: Assets/Images/Fonts.txt
-  artifactKey: Guid(48e061b4a4073354487b936082f423e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Fonts.txt using Guid(48e061b4a4073354487b936082f423e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e3e19c4c5d4160c58ffad9c9c96b08d') in 0.022808 seconds 
+  Time since last request: 0.000489 seconds.
+  path: Assets/GUI Kit Casual Game/PSD/PSD.unitypackage
+  artifactKey: Guid(4779ff1fd81cc43579557ac12955b023) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/PSD/PSD.unitypackage using Guid(4779ff1fd81cc43579557ac12955b023) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b25013800b4043e755731fe2042d2fc5') in 0.045577 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.798362 seconds.
-  path: Assets/Images/Cool_Game_Buttons.png
-  artifactKey: Guid(1ee100dbe639f414cbc94974a89f6a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Cool_Game_Buttons.png using Guid(1ee100dbe639f414cbc94974a89f6a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f12e28686f2a38bca7c829d0c8da6ef9') in 0.152776 seconds 
+  Time since last request: 0.000412 seconds.
+  path: Assets/GUI Kit Casual Game/Scenes
+  artifactKey: Guid(385c4edb71f404c3b9afccace2ef4dac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Scenes using Guid(385c4edb71f404c3b9afccace2ef4dac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0648dd19117b5651c44451d3f244a48') in 0.012074 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 22.489766 seconds.
-  path: Assets/Images/Cool_Game_Buttons.png
-  artifactKey: Guid(1ee100dbe639f414cbc94974a89f6a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Cool_Game_Buttons.png using Guid(1ee100dbe639f414cbc94974a89f6a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48d7896c76ec1673848c4be37830e70f') in 0.085199 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 206.363323 seconds.
-  path: Assets/Images/Cool_Game_Buttons.png
-  artifactKey: Guid(1ee100dbe639f414cbc94974a89f6a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Cool_Game_Buttons.png using Guid(1ee100dbe639f414cbc94974a89f6a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6a71df2f30b12c9620429957102fb47') in 0.159162 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.592387 seconds.
-  path: Assets/Images/Cool_Game_Buttons.png
-  artifactKey: Guid(1ee100dbe639f414cbc94974a89f6a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Cool_Game_Buttons.png using Guid(1ee100dbe639f414cbc94974a89f6a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'effab79ab671ed55e78db9734c05597a') in 0.106539 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.608102 seconds.
-  path: Assets/Images/Cool_Game_Buttons.png
-  artifactKey: Guid(1ee100dbe639f414cbc94974a89f6a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Cool_Game_Buttons.png using Guid(1ee100dbe639f414cbc94974a89f6a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1251d7e2937b31044ccc182a54340d77') in 0.088986 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 377.811371 seconds.
-  path: Assets/Images/Cool_Game_Button.png
-  artifactKey: Guid(933181ebdd54ca5449ca22fead25cb8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Cool_Game_Button.png using Guid(933181ebdd54ca5449ca22fead25cb8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b7cb81b6b1a36a3ce79427f9e414546') in 0.133811 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 23.307547 seconds.
-  path: Assets/Images/Cool_Game_Button.png
-  artifactKey: Guid(933181ebdd54ca5449ca22fead25cb8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Cool_Game_Button.png using Guid(933181ebdd54ca5449ca22fead25cb8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6cdcde663206a72f8ea0d346bb56132') in 0.105813 seconds 
+  Time since last request: 0.000432 seconds.
+  path: Assets/GUI Kit Casual Game/PSD
+  artifactKey: Guid(418c0b2fa23bf4efd938e449ec17a343) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/PSD using Guid(418c0b2fa23bf4efd938e449ec17a343) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8c30e0ce2b8ac549c2ebcb63ae34e0f') in 0.042580 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.025649 seconds.
+Registered in 0.007310 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.79 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 2.24 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.851 seconds
+- Completed reload, in  1.530 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 2.21 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 2.46 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2780 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 222.2 MB.
-System memory in use after: 218.5 MB.
+Unloading 2777 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 136.0 MB.
+System memory in use after: 134.4 MB.
 
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3429.
-Total: 10.304100 ms (FindLiveObjects: 0.999300 ms CreateObjectMapping: 0.457300 ms MarkObjects: 5.823800 ms  DeleteObjects: 3.019900 ms)
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 3327.
+Total: 6.703100 ms (FindLiveObjects: 0.654300 ms CreateObjectMapping: 0.246500 ms MarkObjects: 4.881700 ms  DeleteObjects: 0.916700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
+Received Import Request.
+  Time since last request: 188.864349 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17935bf1b20f9813916681b25e283d1a') in 0.031285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.302052 seconds.
+  path: Assets/GUI Kit Casual Game/Scripts
+  artifactKey: Guid(8090065bf71414951bbe6f77e0db06e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Scripts using Guid(8090065bf71414951bbe6f77e0db06e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bc03478225a91581d7e382cf73a3dfe') in 0.015114 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.674313 seconds.
+  path: Assets/GUI Kit Casual Game/Scripts/Panel.cs
+  artifactKey: Guid(9a00128818eda43dfaa959b83527b255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Scripts/Panel.cs using Guid(9a00128818eda43dfaa959b83527b255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27530d9e86f946c0b5fd7591aba97f24') in 0.129763 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.946471 seconds.
+  path: Assets/GUI Kit Casual Game/Scripts/PanelControl.cs
+  artifactKey: Guid(bf55aa2c0d7914b348b9d193f622141c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Scripts/PanelControl.cs using Guid(bf55aa2c0d7914b348b9d193f622141c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f89ff9eb7298e27388f102cd02cfb88') in 0.011259 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.698109 seconds.
+  path: Assets/GUI Kit Casual Game/ResourcesData
+  artifactKey: Guid(739fc32eaa44d4369b84cd42e423839b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/ResourcesData using Guid(739fc32eaa44d4369b84cd42e423839b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2944fba98bcc9461aff8b5206002e3d1') in 0.019098 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.171821 seconds.
+  path: Assets/GUI Kit Casual Game/ResourcesData/Particle
+  artifactKey: Guid(f28e19b42baa14be9a4d133aedf91da8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/ResourcesData/Particle using Guid(f28e19b42baa14be9a4d133aedf91da8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c50db226339308767c6458527c4220f') in 0.055654 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.573682 seconds.
+  path: Assets/GUI Kit Casual Game/ResourcesData/Animatons
+  artifactKey: Guid(e2b891b0e7c4f4c5781585b2e66d3c2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/ResourcesData/Animatons using Guid(e2b891b0e7c4f4c5781585b2e66d3c2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '938b554bf09bce77b4db55ab1891f48a') in 0.012318 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.949669 seconds.
+  path: Assets/GUI Kit Casual Game/Extensions/TextMesh Pro
+  artifactKey: Guid(f54d1bd14bd3ca042bd867b519fee8cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Extensions/TextMesh Pro using Guid(f54d1bd14bd3ca042bd867b519fee8cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a9c8d9ea0f025c0a8655f219472e868') in 0.012294 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.716113 seconds.
+  path: Assets/GUI Kit Casual Game/+Document README+
+  artifactKey: Guid(176a5822acbb04535ac09d08806e5813) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/+Document README+ using Guid(176a5822acbb04535ac09d08806e5813) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c436dc3076aac811796ed03580faccb9') in 0.013555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.313655 seconds.
+  path: Assets/GUI Kit Casual Game/+Document README+/CasualGame Manual.pdf
+  artifactKey: Guid(f585f697ad8d4409cbcdfab4406609ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/+Document README+/CasualGame Manual.pdf using Guid(f585f697ad8d4409cbcdfab4406609ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5feb1c36de7f3b166a4939755f4bc005') in 0.019353 seconds 
+========================================================================
 Received Prepare
-Refreshing native plugins compatible for Editor in 8.03 ms, found 1 plugins.
+Registering precompiled user dll's ...
+Registered in 0.006691 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.40 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 170.7 MB.
-System memory in use after: 167.0 MB.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.278 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 2.29 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2777 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 136.0 MB.
+System memory in use after: 134.4 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 3429.
-Total: 9.136200 ms (FindLiveObjects: 0.881200 ms CreateObjectMapping: 0.429800 ms MarkObjects: 5.228800 ms  DeleteObjects: 2.594100 ms)
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 3330.
+Total: 6.457700 ms (FindLiveObjects: 0.778400 ms CreateObjectMapping: 0.342100 ms MarkObjects: 4.439100 ms  DeleteObjects: 0.895500 ms)
 
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 36.853193 seconds.
+  path: Assets/GUI Kit Casual Game/Extensions/UIParticle
+  artifactKey: Guid(77940c6c1f51b428ca74cd45545b1e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Extensions/UIParticle using Guid(77940c6c1f51b428ca74cd45545b1e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f61be41beed0ff5b8d2a4afb48922b25') in 0.018322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.667354 seconds.
+  path: Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Slider_Token_Fillamount.prefab
+  artifactKey: Guid(35ad99c5ee73b47a588592e2f5661500) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Slider_Token_Fillamount.prefab using Guid(35ad99c5ee73b47a588592e2f5661500) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b709403c60ae84d3fefb994ac8d6076') in 0.182105 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.382729 seconds.
+  path: Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Slider_Offline_Bar.prefab
+  artifactKey: Guid(0107fc647d53a448abc8d9164eff4df9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Slider_Offline_Bar.prefab using Guid(0107fc647d53a448abc8d9164eff4df9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a35063ce1c4dc70e06720c59a1064fb') in 0.034295 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.376464 seconds.
+  path: Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Slider_Offline_Bar.prefab
+  artifactKey: Guid(0107fc647d53a448abc8d9164eff4df9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Slider_Offline_Bar.prefab using Guid(0107fc647d53a448abc8d9164eff4df9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9db7bf1798de71e41f802a9385a09d85') in 0.019998 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.632259 seconds.
+  path: Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Slider_LoadingBar.prefab
+  artifactKey: Guid(1655ad8223f244d34a1dc63ee78eac3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Slider_LoadingBar.prefab using Guid(1655ad8223f244d34a1dc63ee78eac3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26a2dcd14e1aa286fc878ad18053ffab') in 0.025516 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.123906 seconds.
+  path: Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Slider_Character_Exp_Max.prefab
+  artifactKey: Guid(7510804742b2b406e92c117f3a43f9b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Slider_Character_Exp_Max.prefab using Guid(7510804742b2b406e92c117f3a43f9b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3ef0d46a928fdf7f38e1f287754740a') in 0.043194 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.365572 seconds.
+  path: Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Slider_Character_Exp_LevelUp.prefab
+  artifactKey: Guid(e6fad4cefc10b43039747a6b2deeb501) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Slider_Character_Exp_LevelUp.prefab using Guid(e6fad4cefc10b43039747a6b2deeb501) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17ef2933dbd2212736fb9ce47935bb22') in 0.045297 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.571463 seconds.
+  path: Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Slider_Character_Exp.prefab
+  artifactKey: Guid(6e46ffc6e1d664b6ea12085d0c56480a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Slider_Character_Exp.prefab using Guid(6e46ffc6e1d664b6ea12085d0c56480a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b3daa67f041e864a472584888b07f03') in 0.045651 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.187779 seconds.
+  path: Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Group_RuneFuse.prefab
+  artifactKey: Guid(2bc0f6572d66a49b38a10e94eafb3e8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI Kit Casual Game/Prefabs/UI_Slider/Group_RuneFuse.prefab using Guid(2bc0f6572d66a49b38a10e94eafb3e8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb89f1adb71b811c22813135046759d0') in 0.048016 seconds 

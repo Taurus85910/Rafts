@@ -85,8 +85,8 @@ public class Battle : MonoBehaviour
 
                 if (defenders[currentTarget].IsAlive)
                 {
-                    defenders[currentTarget].AppleDamage(attackers[i].Shoot(defenders[currentTarget].DwellerBody.transform));
                     attackers[i].DwellerBody.transform.LookAt(defenders[currentTarget].DwellerBody.transform);
+                    defenders[currentTarget].AppleDamage(attackers[i].Shoot(defenders[currentTarget].DwellerBody.transform));
                     attackers[i].DwellerBody.AlignBody();
                 }
                 else
