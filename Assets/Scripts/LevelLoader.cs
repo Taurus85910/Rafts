@@ -33,11 +33,6 @@ public class LevelLoader : MonoBehaviour
 
     private void Start()
     {
-        //_saver.Load();
-        SaveData.Level = 0;
-        SaveData.Money = 0;
-        
-        _saver.Save();
         LoadLevel();
     }
 
