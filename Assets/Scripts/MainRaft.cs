@@ -7,7 +7,7 @@ using UnityEngine;
 public class MainRaft : MonoBehaviour
 {
     [SerializeField] private int _gridSize;
-    
+
     protected List<Raft> Rafts;
     protected List<Dweller> Dwellers;
     private bool _isIndependent  = true;
@@ -25,7 +25,7 @@ public class MainRaft : MonoBehaviour
         transform.position = new Vector3(Mathf.RoundToInt(transform.position.x / _gridSize) * _gridSize, 0,
             Mathf.RoundToInt(transform.position.z / _gridSize) * _gridSize);
     }
-
+    
     public bool IsDwellersAlive()
     {
         return Dwellers.Count(dweller => dweller.IsAlive) > 0;

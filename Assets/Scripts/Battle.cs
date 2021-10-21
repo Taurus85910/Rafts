@@ -43,28 +43,30 @@ public class Battle : MonoBehaviour
         _playerMovement.enabled = false;
         _cameraZoomer.Zoom();
         mainRaft.CaptureRafts();
-        yield return new WaitForSeconds(_turnDuration);
         while (_playerRaft.IsDwellersAlive() && mainRaft.IsDwellersAlive())
         {
-           
+            yield return new WaitForSeconds(_turnDuration);
             Attack(_playerRaft.GetDwellers, mainRaft.GetDwellers);
             Attack(mainRaft.GetDwellers, _playerRaft.GetDwellers);
-            yield return new WaitForSeconds(_turnDuration);
+            
         }
-        
+       
+        yield return new WaitForSeconds(_turnDuration);
+
         if (_playerRaft.IsDwellersAlive())
         {
-            mainRaft.ChangeDwellersColor();
             mainRaft.EndShootingDwellers();
-            mainRaft.ChangeRaftsColor();
             _playerRaft.EndShootingDwellers();
+            mainRaft.PutAwayDwellersWeapon();
+            _playerRaft.PutAwayDwellersWeapon();
+            mainRaft.ChangeRaftsColor();
+            mainRaft.ChangeDwellersColor();
             _raftConnector.Connecting(mainRaft);
             _playerRaft.UpdateRaftCompound();
             _playerRaft.RestoreDwellersHealth();
             _playerMovement.enabled = true;
             _cameraZoomer.Unzoom();
-            mainRaft.PutAwayDwellersWeapon();
-            _playerRaft.PutAwayDwellersWeapon();
+            
         }
         else
         {

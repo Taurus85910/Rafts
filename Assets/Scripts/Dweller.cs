@@ -13,7 +13,6 @@ public class Dweller : MonoBehaviour
     [SerializeField] private DwellerBody _dwellerBody;
     [SerializeField] private float _flashDuration;
     [SerializeField] private GameObject _ragDall;
-    [SerializeField] private SkinnedMeshRenderer _ragDallRenderer;
 
     private Weapon _weapon;
     private SkinnedMeshRenderer _skinnedMeshRenderer;
@@ -63,7 +62,6 @@ public class Dweller : MonoBehaviour
     {
         _skinnedMeshRenderer.enabled = true;
         _skinnedMeshRenderer.material = _material;
-        _ragDallRenderer.material = _material;
         _originalColor = _skinnedMeshRenderer.material.color;
     }
 

@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gridSize: 3
+  _skinChanger: {fileID: 197775613646817573, guid: 506679b1f787612428ce16bc3be05952, type: 3}
 --- !u!1001 &1140823256858438298
 PrefabInstance:
   m_ObjectHideFlags: 0

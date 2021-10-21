@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class SaveData 
+public static class SaveData 
 {
-   public int Level;
-   public int Money;
+   public static int Level;
+   public static int Money;
+   public static int CurrentUnitSkin;
+   public static int IsSecondUnitBought;
 }
 

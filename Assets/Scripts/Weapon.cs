@@ -25,7 +25,6 @@ public class Weapon : MonoBehaviour
           {
             if (bullet.gameObject.activeSelf == false)
             {
-                
                 bullet.gameObject.transform.position = _shootPoint.position;
                 bullet.gameObject.SetActive(true);
                 bullet.MoveToTarget(target);

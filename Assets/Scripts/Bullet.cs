@@ -7,9 +7,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private ParticleSystem _impactSystem;
     [SerializeField] private float _targetYPosition;
-    [SerializeField] private Transform _impactDirection;
 
     private float _flyTime;
     private float _elapsedTime;
@@ -21,19 +19,8 @@ public class Bullet : MonoBehaviour
         if (_elapsedTime >= _flyTime)
         {
             _elapsedTime = 0;
-            DisableBullet();
+            gameObject.SetActive(false);
         }
-    }
-    
-    private void DisableBullet()
-    {
-        _impactSystem.gameObject.transform.position = transform.position;
-        _impactSystem.gameObject.transform.TransformVector(_impactDirection.position.normalized);
-        _impactSystem.gameObject.transform.rotation = _impactDirection.rotation;
-        
-        _impactSystem.Stop();
-        _impactSystem.Play();
-        gameObject.SetActive(false);
     }
 
     public void MoveToTarget(Transform target)

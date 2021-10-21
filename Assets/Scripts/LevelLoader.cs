@@ -14,9 +14,9 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] private Canvas _canvas;
     [SerializeField] private GameObject _restartPanel;
     [SerializeField] private GridPointsController _gridPointsController;
+    [SerializeField] private SkinChanger _skinChanger;
     
-    private Saver _saver = new Saver();
-    private SaveData _saveData = new SaveData();
+    private readonly Saver _saver = new Saver();
     private GameObject _currentLevel;
     private GameObject _currentPlayerPrefab;
     private MainGrid _mainGrid;
@@ -28,20 +28,23 @@ public class LevelLoader : MonoBehaviour
 
     private void Awake()
     {
-        _levels.ForEach(level => level.gameObject.SetActive(false));
-        _playerPrefab.SetActive(false);
+        _skinChanger.SetDwellers(_levels,_playerPrefab);
     }
 
     private void Start()
     {
-        _saver.Save(_saveData);
+        //_saver.Load();
+        SaveData.Level = 0;
+        SaveData.Money = 0;
+        
+        _saver.Save();
         LoadLevel();
     }
 
     private void OpenEndLevelUI()
     {
         _endLevelUI.SetActive(true);
-        _reward = (int)(_levels[_saveData.Level].Reward / 2 + _levels[_saveData.Level].Reward / 2 * 
+        _reward = (int)(_levels[SaveData.Level].Reward / 2 + _levels[SaveData.Level].Reward / 2 * 
             (Convert.ToDecimal(_mainGrid.CurrentFoundRaftsCount) / _mainGrid.GridsCount));
         RewardChanged?.Invoke(_reward);
     }
@@ -50,12 +53,11 @@ public class LevelLoader : MonoBehaviour
     {
         _currentLevel.GetComponent<Level>().LevelCompleted -= OpenEndLevelUI;
         _endLevelUI.SetActive(false);
-        _saveData.Money += _reward;
-        _saveData.Level++;
-        _saver.Save(_saveData);
+        SaveData.Money += _reward;
+        SaveData.Level++;
+        _saver.Save();
         Destroy(_currentLevel);
         Destroy(_currentPlayerPrefab);
-       
         _mainGrid.gameObject.SetActive(false);
         LoadLevel();
     }
@@ -74,21 +76,20 @@ public class LevelLoader : MonoBehaviour
         _gridPointsController.ClearPointsIcon();
         _endLevelUI.SetActive(false);
         _shopButton.SetActive(true);
-        _saveData = _saver.Load();
-        MoneyChanged?.Invoke(_saveData.Money);
-        LevelChanged?.Invoke(_saveData.Level+1);
-        _currentLevel = Instantiate(_levels[_saveData.Level].gameObject);
+        _saver.Load();
+        _skinChanger.SetDwellersSkin();
+        MoneyChanged?.Invoke(SaveData.Money);
+        LevelChanged?.Invoke(SaveData.Level+1);
+        _currentLevel = Instantiate(_levels[SaveData.Level].gameObject);
         _currentLevel.SetActive(true);
         _currentLevel.GetComponent<Level>().LevelCompleted += OpenEndLevelUI;
         _currentPlayerPrefab = Instantiate(_playerPrefab);
         _currentPlayerPrefab.SetActive(true);
         _canvas.worldCamera = _currentPlayerPrefab.GetComponentInChildren<Camera>();
         _currentPlayerPrefab.GetComponentsInChildren<MainGrid>().ToList().ForEach(grid => grid.gameObject.SetActive(true));
-        _mainGrid = _currentPlayerPrefab.GetComponentsInChildren<MainGrid>().ToList()[_saveData.Level];
+        _mainGrid = _currentPlayerPrefab.GetComponentsInChildren<MainGrid>().ToList()[SaveData.Level];
         _mainGrid.ResetFoundRaftsCount();
         _currentPlayerPrefab.GetComponentsInChildren<MainGrid>().ToList().ForEach(grid => grid.gameObject.SetActive(false));
         _mainGrid.gameObject.SetActive(true);
-        
-       
     }
 }

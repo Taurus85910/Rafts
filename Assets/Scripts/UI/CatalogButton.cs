@@ -13,6 +13,8 @@ public class CatalogButton : MonoBehaviour
 
     private Image _image;
 
+    public event Action CatalogOpened;
+    
     private void Start()
     {
         _image = GetComponent<Image>();
@@ -22,6 +24,7 @@ public class CatalogButton : MonoBehaviour
     {
         _openableCatalog.SetActive(true);
         _image.color = _selectColor;
+        CatalogOpened?.Invoke();
     }
 
     public void CloseCatalog()
